@@ -33,7 +33,7 @@ class Controller():
     access_token = None
     access_token_expiration = None
     csp_token = os.environ['CSP_TOKEN']
-    csp_host = "console.cloud.vmware.com"
+    csp_host = "console.tanzu.broadcom.com"
     update_needed = False
 
 
