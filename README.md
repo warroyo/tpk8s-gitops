@@ -130,9 +130,19 @@ This could easily be done by flux but for simplicity we are just deploying this 
 
 1. create the secret needed for the controller. this should be your CSP token.
 
+For saas:
 ```bash
 cat <<'EOF' >deploy/token-generator-deploy/generator.env
 CSP_TOKEN=<your-token>
+EOF
+```
+
+for Self managed:
+```bash
+cat <<'EOF' >deploy/token-generator-deploy/generator.env
+TSPM_USER=username
+TPSM_PASS=password
+TPSM_HOST=https://your-tpsm-host
 EOF
 ```
 
