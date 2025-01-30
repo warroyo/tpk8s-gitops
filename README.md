@@ -140,7 +140,7 @@ EOF
 for Self managed:
 ```bash
 cat <<'EOF' >deploy/token-generator-deploy/generator.env
-TSPM_USER=username
+TPSM_USER=username
 TPSM_PASS=password
 TPSM_HOST=https://your-tpsm-host
 EOF
