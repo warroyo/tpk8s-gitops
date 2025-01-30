@@ -47,15 +47,26 @@ Pre-reqs:
 
 This could easily be done by flux but for simplicity we are just deploying this via the command line.
 
-1. create the secret needed for the controller. this should be your CSP token.
+1. create the secret needed for the controller.
 
+For saas:
 ```bash
 cat <<'EOF' >deploy/token-generator-deploy/generator.env
 CSP_TOKEN=<your-token>
 EOF
 ```
 
-2. deploy the controller into the cluster you plan to use for gitops with flux. Ideally this is a cluster managed by TMC with flux enabled. 
+for Self managed:
+```bash
+cat <<'EOF' >deploy/token-generator-deploy/generator.env
+TSPM_USER=username
+TPSM_PASS=password
+TPSM_HOST=https://your-tpsm-host
+EOF
+```
+
+
+2. Deploy the controller into the cluster you plan to use for gitops with flux. Ideally this is a cluster managed by TMC with flux enabled. 
 
 ```bash
 kubectl apply -k deploy/token-generator-deploy              
