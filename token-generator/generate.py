@@ -114,7 +114,7 @@ class Controller():
         def wrapper(api,*args,**kwargs):
             if time.time() > api.access_token_expiration:
                 logging.info("token expired regenerating")
-                api.access_token, api.access_token_expiration =  getAccessToken(api.csp_host,api.csp_token)
+                api.access_token, api.access_token_expiration =  getAccessToken(api.csp_host,api.csp_token,api.tp_host,api.tpsm_user,api.tpsm_pass)
                 Controller.update_token(api.access_token,api.access_token_expiration)
             return decorated(api,*args,**kwargs)
 
